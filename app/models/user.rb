@@ -7,4 +7,10 @@ class User < ApplicationRecord
 
   has_many :notifications, foreign_key: :recipient_id
   has_many :services
+  
+  has_many :user_roles
+  has_many :companies, through: :user_roles 
+  
+  accepts_nested_attributes_for :companies
+  
 end

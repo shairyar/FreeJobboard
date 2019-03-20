@@ -221,6 +221,8 @@ GEM
     pg (1.1.4)
     popper_js (1.14.5)
     puma (3.12.0)
+    pundit (2.0.1)
+      activesupport (>= 3.0.0)
     pusher-client (0.6.2)
       json
       websocket (~> 1.0)
@@ -386,6 +388,7 @@ DEPENDENCIES
   omniauth-twitter (~> 1.4)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
+  pundit
   rails (~> 5.2.2)
   rspec-rails (~> 3.8)
   sass-rails (~> 5.0)
