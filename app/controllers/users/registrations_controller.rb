@@ -6,6 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
+    @registration_type = registration_type
     super
   end
 
@@ -42,15 +43,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    # devise_parameter_sanitizer.permit(:sign_up, keys: [companies_attributes: [ :name ]])
-    
-    devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-      user_params.permit({ companies: [] }, :name, :email, :password, :password_confirmation)
-    end
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password, :password_confirmation, companies_attributes:[:name ]])
+  end
 
-
-    # devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, address_attributes: [:country, :state, :city, :area, :postal_code]])
-
+  def registration_type
+    params[:employer].present? ? 'employer' : 'job_seeker'
   end
 
   # If you have extra params to permit, append them to the sanitizer.

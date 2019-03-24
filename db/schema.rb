@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2019_03_19_161056) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "company_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_company_users_on_company_id"
+    t.index ["user_id"], name: "index_company_users_on_user_id"
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -64,15 +73,6 @@ ActiveRecord::Schema.define(version: 2019_03_19_161056) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_services_on_user_id"
-  end
-
-  create_table "user_roles", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_user_roles_on_company_id"
-    t.index ["user_id"], name: "index_user_roles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
