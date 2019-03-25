@@ -43,6 +43,9 @@ group :development, :test do
   gem 'pry-stack_explorer'
   gem 'pry-nav'
   gem 'rspec-rails', '~> 3.8'
+  gem 'capybara'
+  gem "webdrivers", "~> 3.0"
+  gem "database_cleaner"
   gem 'factory_bot'
   gem 'faker'
   
@@ -58,6 +61,7 @@ group :development do
   gem 'bullet'
   gem 'yard'
   gem 'travis'
+  gem 'guard-rspec', require: false
 end
 
 
