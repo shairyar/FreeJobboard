@@ -22,6 +22,7 @@ script:
   - bundle exec rspec
 
 install:
+  - bundle install
   - nvm install node
   - node -v
   - npm i -g yarn
