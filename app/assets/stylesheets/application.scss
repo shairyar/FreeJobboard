@@ -20,3 +20,9 @@
 body > .alert {
   margin-bottom: 0;
 }
+
+.alert ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
