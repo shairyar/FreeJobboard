@@ -43,6 +43,10 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
+
+  # FactoryBot integration
+  config.include FactoryBot::Syntax::Methods
+
   # clear database before each test runs
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
@@ -66,5 +70,7 @@ RSpec.configure do |config|
 
   #enable support for device in tests
   config.include Devise::Test::IntegrationHelpers, type: :feature
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
   config.formatter = :documentation
 end
