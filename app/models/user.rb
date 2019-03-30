@@ -20,4 +20,8 @@ class User < ApplicationRecord
   def is_employer?
     self.companies.count == 0 ? false : true
   end
+
+  def company
+    self.companies.first
+  end
 end

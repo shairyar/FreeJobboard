@@ -1,4 +1,4 @@
-<%= form_with(model: job, local: true) do |form| %>
+<%= form_with(model: job, url: employers_company_jobs_path(current_user.company, job)) do |form| %>
   <% if job.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
@@ -33,7 +33,7 @@
     <% if job.persisted? %>
       <%= link_to "Cancel", job, class: "btn btn-link" %>
     <% else %>
-      <%= link_to "Cancel", jobs_path, class: "btn btn-link" %>
+      <%= link_to "Cancel", employers_company_jobs_path(current_user.company), class: "btn btn-link" %>
     <% end %>
   </div>
 <% end %>
