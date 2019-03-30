@@ -31,4 +31,21 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe '.is_job_seeker?' do
+    let(:new_user) {attributes_for(:user)}
+    it 'is a job seeker' do
+      user = User.create new_user
+      expect(user.is_job_seeker?).to eq(true)
+    end
+  end
+
+  describe '.employer?' do
+    let(:new_user) {attributes_for(:user)}
+    it 'is an employer' do
+      user_with_company = new_user.merge({"companies_attributes" => {"0" => attributes_for(:company)}})
+      user = User.create user_with_company
+      expect(user.is_employer?).to eq(true)
+    end
+  end
 end

@@ -12,5 +12,12 @@ class User < ApplicationRecord
   has_many :companies, through: :company_users
   
   accepts_nested_attributes_for :companies
-  
+
+  def is_job_seeker?
+    self.companies.count == 0 ? true : false
+  end
+
+  def is_employer?
+    self.companies.count == 0 ? false : true
+  end
 end

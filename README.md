@@ -10,7 +10,7 @@
 
 
 - [ ] Implement Pundit for authorization
-- [ ] Implement sign up for job seeker and employer
+- [x] Implement sign up for job seeker and employer
 - [ ] Employer dashboard
   - [ ] Manage jobs
   - [ ] Manage applications
