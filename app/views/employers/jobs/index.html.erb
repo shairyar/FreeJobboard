@@ -35,7 +35,7 @@
                       <td><%= job.title %></td>
                       <td><%= job.description %></td>
                       <td><%= job.company.name %></td>
-            <td><%= link_to 'Show', edit_employers_company_job_path(current_user.company, job.id) %></td>
+            <td><%= link_to 'Show', employers_job_path(job) %></td>
           
         <% end %>
       <% end %>

@@ -1,9 +1,9 @@
 <div class="page-header">
-  <%= link_to jobs_path, class: 'btn btn-default' do %>
+  <%= link_to employers_company_jobs_path(current_user.company), class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     All Jobs
   <% end %>
-  <%= link_to edit_job_path(@job), class: 'btn btn-primary' do %>
+  <%= link_to edit_employers_job_path(@job), class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>

@@ -12,26 +12,26 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users/sign-up-employer', to: 'users/registrations#new', 'employer': true
   end
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks", registrations: 'users/registrations' }, path_names: { sign_up: 'sign-up-jobseeker' }
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks", registrations: 'users/registrations'}, path_names: {sign_up: 'sign-up-jobseeker'}
 
   # Job seeker routes
 
   # Employer routes
   namespace :employers do
-    resources :companies do
+    resources :companies, shallow: true do
       resources :jobs
     end
   end
 
   # Admin routes
   namespace :admin do
-      resources :users
-      resources :announcements
-      resources :notifications
-      resources :services
+    resources :users
+    resources :announcements
+    resources :notifications
+    resources :services
 
-      root to: "users#index"
-    end
+    root to: "users#index"
+  end
 
   authenticate :user, lambda {|u| u.admin?} do
     mount Sidekiq::Web => '/sidekiq'
