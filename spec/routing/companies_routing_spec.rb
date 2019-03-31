@@ -1,38 +1,38 @@
 require "rails_helper"
 
-RSpec.describe CompaniesController, type: :routing do
+RSpec.describe Employers::CompaniesController, type: :routing do
   describe "routing" do
     it "routes to #index" do
-      expect(:get => "/companies").to route_to("companies#index")
+      expect(:get => "employers/companies").to route_to("employers/companies#index")
     end
 
     it "routes to #new" do
-      expect(:get => "/companies/new").to route_to("companies#new")
+      expect(:get => "employers/companies/new").to route_to("employers/companies#new")
     end
 
     it "routes to #show" do
-      expect(:get => "/companies/1").to route_to("companies#show", :id => "1")
+      expect(:get => "employers/companies/1").to route_to("employers/companies#show", :id => "1")
     end
 
     it "routes to #edit" do
-      expect(:get => "/companies/1/edit").to route_to("companies#edit", :id => "1")
+      expect(:get => "employers/companies/1/edit").to route_to("employers/companies#edit", :id => "1")
     end
 
 
     it "routes to #create" do
-      expect(:post => "/companies").to route_to("companies#create")
+      expect(:post => "employers/companies").to route_to("employers/companies#create")
     end
 
     it "routes to #update via PUT" do
-      expect(:put => "/companies/1").to route_to("companies#update", :id => "1")
+      expect(:put => "employers/companies/1").to route_to("employers/companies#update", :id => "1")
     end
 
     it "routes to #update via PATCH" do
-      expect(:patch => "/companies/1").to route_to("companies#update", :id => "1")
+      expect(:patch => "employers/companies/1").to route_to("employers/companies#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      expect(:delete => "/companies/1").to route_to("companies#destroy", :id => "1")
+      expect(:delete => "employers/companies/1").to route_to("employers/companies#destroy", :id => "1")
     end
   end
 end
