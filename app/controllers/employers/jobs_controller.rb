@@ -31,7 +31,7 @@ module Employers
 
       respond_to do |format|
         if @job.save
-          format.html { redirect_to employers_company_jobs_path(current_user.company), notice: 'Job was successfully created.' }
+          format.html { redirect_to employers_job_path(@job.id), notice: 'Job was successfully created.' }
           format.json { render :show, status: :created, location: @job }
         else
           format.html { render :new }
@@ -59,7 +59,7 @@ module Employers
     def destroy
       @job.destroy
       respond_to do |format|
-        format.html { redirect_to employers_company_jobs_path(current_user.company), notice: 'Job was successfully destroyed.' }
+        format.html { redirect_to employers_company_jobs_path(@job.company), notice: 'Job was successfully destroyed.' }
         format.json { head :no_content }
       end
     end

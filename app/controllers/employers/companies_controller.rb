@@ -26,10 +26,9 @@ module Employers
     # POST /companies.json
     def create
       @company = Company.new(company_params)
-
       respond_to do |format|
         if @company.save
-          format.html { redirect_to @company, notice: 'Company was successfully created.' }
+          format.html { redirect_to employers_companies_path(@company.id), notice: 'Company was successfully created.' }
           format.json { render :show, status: :created, location: @company }
         else
           format.html { render :new }
@@ -43,7 +42,8 @@ module Employers
     def update
       respond_to do |format|
         if @company.update(company_params)
-          format.html { redirect_to @company, notice: 'Company was successfully updated.' }
+          flash[:notice] = 'Company was successfully updated.'
+          format.html { redirect_to employers_company_path @company.id }
           format.json { render :show, status: :ok, location: @company }
         else
           format.html { render :edit }
@@ -70,7 +70,7 @@ module Employers
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.fetch(:company, {})
+      params.require(:company).permit(:name)
     end
   end
 end

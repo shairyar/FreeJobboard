@@ -5,12 +5,6 @@
   <div class="col-sm-6">
     <h1>Companies</h1>
   </div>
-
-  <div class="col-sm-6 text-right">
-  <%= link_to new_company_path, class: 'btn btn-primary' do %>
-    Add New Company
-  <% end %>
-  </div>
 </div>
 
 <div class="table-responsive">
@@ -26,14 +20,10 @@
     </thead>
 
     <tbody>
-      <% @companies.each do |company| %>
+      <%
+        @companies.each do |company| %>
         <%= content_tag :tr, id: dom_id(company), class: dom_class(company) do %>
-          
-
-          
-          
-            <td><%= link_to 'Show', company %></td>
-          
+            <td><%= link_to 'Show', employers_company_path(company.id) %></td>
         <% end %>
       <% end %>
     </tbody>

@@ -4,4 +4,6 @@ class Company < ApplicationRecord
 
   has_many :jobs
   accepts_nested_attributes_for :jobs
+
+  validates :name, presence: true
 end
