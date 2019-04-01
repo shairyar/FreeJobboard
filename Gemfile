@@ -49,7 +49,11 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'bullet'
-  
+
+end
+
+group :test do
+  gem 'simplecov', require: false, group: :test
 end
 
 group :development do
