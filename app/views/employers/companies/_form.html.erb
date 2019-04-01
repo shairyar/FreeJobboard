@@ -1,4 +1,4 @@
-<%= form_with(model: company, url: new_employers_company_path) do |form| %>
+<%= form_with(model: company, url: url) do |form| %>
   <% if company.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
   <div class="form-group">
     <% if company.persisted? %>
       <div class="float-right">

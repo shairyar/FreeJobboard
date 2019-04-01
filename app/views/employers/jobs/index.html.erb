@@ -22,12 +22,15 @@
     </thead>
 
     <tbody>
-    <% @jobs.each do |job| %>
+    <% @jobs.includes(:company).each do |job| %>
       <%= content_tag :tr, id: dom_id(job), class: dom_class(job) do %>
         <td><%= job.title %></td>
         <td><%= job.description %></td>
         <td><%= job.company.name %></td>
-        <td><%= link_to 'Show', employers_job_path(job) %></td>
+        <td>
+          <%= link_to 'Show', employers_job_path(job) %>
+          <%= link_to 'Edit', edit_employers_job_path(job) %>
+        </td>
 
       <% end %>
     <% end %>
