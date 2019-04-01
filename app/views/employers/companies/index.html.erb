@@ -1,6 +1,3 @@
-
-
-
 <div class="row">
   <div class="col-sm-6">
     <h1>Companies</h1>
@@ -10,22 +7,21 @@
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <thead>
-      <tr>
-    
-
-            
-          <th></th>
-        
-      </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
     </thead>
-
     <tbody>
-      <%
-        @companies.each do |company| %>
-        <%= content_tag :tr, id: dom_id(company), class: dom_class(company) do %>
-            <td><%= link_to 'Show', employers_company_path(company.id) %></td>
-        <% end %>
+    <%
+      @companies.each do |company| %>
+
+      <%= content_tag :tr, id: dom_id(company), class: dom_class(company) do %>
+        <td><%= company.name %></td>
+        <td><%= link_to 'Show', employers_company_path(company.id) %></td>
+
       <% end %>
+    <% end %>
     </tbody>
   </table>
 </div>

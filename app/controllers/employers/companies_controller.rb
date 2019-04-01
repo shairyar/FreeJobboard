@@ -5,7 +5,7 @@ module Employers
     # GET /companies
     # GET /companies.json
     def index
-      @companies = Company.all
+      @companies = current_user.companies
     end
 
     # GET /companies/1
@@ -66,6 +66,7 @@ module Employers
     # Use callbacks to share common setup or constraints between actions.
     def set_company
       @company = Company.find(params[:id])
+      authorize @company
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,5 +1,5 @@
 <div class="page-header">
-  <%= link_to companies_path, class: 'btn btn-default' do %>
+  <%= link_to employers_companies_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     All Companies
   <% end %>
@@ -8,6 +8,7 @@
     Edit
   <% end %>
   <h1>Show company</h1>
+  <%= @company.name  %>
 </div>
 
 <dl class="dl-horizontal">

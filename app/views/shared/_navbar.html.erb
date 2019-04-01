@@ -22,6 +22,7 @@
         <li class="nav-item"><%= link_to "What's New", announcements_path, class: "nav-link #{unread_announcements(current_user)}" %></li>
         <% if user_signed_in? %>
           <% if current_user.is_employer? %>
+            <li class="nav-item"><%= link_to "Companies", employers_companies_path, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "Post Job", employers_company_jobs_path(current_user.company), class: "nav-link" %></li>
           <% end %>
           <li class="nav-item">

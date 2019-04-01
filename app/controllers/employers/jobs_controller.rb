@@ -1,12 +1,12 @@
 module Employers
   class JobsController < ApplicationController
     before_action :set_job, only: [:show, :edit, :update, :destroy]
-    # before_action :set_company, only: [:create]
+    before_action :set_company, only: [:index, :create]
 
     # GET /jobs
     # GET /jobs.json
     def index
-      @jobs = Job.all
+      @jobs = Job.where(company_id: @company.id)
     end
 
     # GET /jobs/1
@@ -68,10 +68,12 @@ module Employers
     # Use callbacks to share common setup or constraints between actions.
     def set_job
       @job = Job.find(params[:id])
+      authorize @job
     end
 
     def set_company
-      @company = current_user.companies.first
+      @company = Company.find(params[:company_id])
+      authorize @company
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
