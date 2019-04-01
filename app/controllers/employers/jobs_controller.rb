@@ -1,5 +1,5 @@
 module Employers
-  class JobsController < ApplicationController
+  class JobsController < EmployersController
     before_action :set_job, only: [:show, :edit, :update, :destroy]
     before_action :set_company, only: [:index, :create]
 

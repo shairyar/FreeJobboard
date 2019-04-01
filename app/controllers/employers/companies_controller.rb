@@ -1,5 +1,5 @@
 module Employers
-  class CompaniesController < ApplicationController
+  class CompaniesController < EmployersController
     before_action :set_company, only: [:show, :edit, :update, :destroy]
 
     # GET /companies
