@@ -7,7 +7,8 @@
 @import "bootstrap";
 @import "sticky-footer";
 @import "announcements";
-
+@import "selectize/dist/css/selectize";
+@import "selectize/dist/css/selectize.default";
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {
   .container {

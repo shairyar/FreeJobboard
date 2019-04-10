@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   end
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks", registrations: 'users/registrations'}, path_names: {sign_up: 'sign-up-jobseeker'}
 
+  # common routes
+  resources :skills, only: [:create]
+
   # Job seeker routes
 
   # Employer routes
