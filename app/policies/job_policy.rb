@@ -11,7 +11,7 @@ class JobPolicy < ApplicationPolicy
     edit?
   end
 
-  def destroy
+  def destroy?
     authorized?
   end
 

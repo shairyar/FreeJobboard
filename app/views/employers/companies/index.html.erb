@@ -19,7 +19,7 @@
 
       <%= content_tag :tr, id: dom_id(company), class: dom_class(company) do %>
         <td><%= company.name %></td>
-        <td><%= company.jobs.size%></td>
+        <td><%= link_to company.jobs.size, employers_company_jobs_path(company.id) %></td>
         <td>
           <%= link_to 'Show', employers_company_path(company.id) %>
           <%= link_to 'Edit', edit_employers_company_path(company.id) %>
