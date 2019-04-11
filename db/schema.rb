@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 2019_04_10_073908) do
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.string "work_type"
+    t.string "salary_range"
     t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -20,7 +20,24 @@
     <%= form.label :description %>
     <%= form.text_area :description, class: 'form-control', cols: 20, rows: 10 %>
   </div>
+  <div class="row">
+    <div class="col ld-6">
+      <div class="form-group">
+        <%= form.label :work_type %>
+        <%= form.select :work_type, Job::DISPLAY_WORK_TYPES.invert, {}, { :class => 'form-control' } %>
+      </div>
+    </div>
+    <div class="col ld-6">
+      <div class="form-group">
+        <%= form.label :salary_range %>
+        <%= form.text_field :salary_range, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+
   <div class="form-group">
+    <%= form.label 'Skills required' %>
     <%= form.select :skill_ids, Skill.all.pluck(:name, :id), {}, { multiple: true, class: "selectize" } %>
   </div>
   <div class="form-group">

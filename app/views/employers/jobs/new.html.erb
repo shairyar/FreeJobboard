@@ -1,3 +1,9 @@
-<h1>New job</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>New job</h1>
+      <%= render 'form', job: @job, url: employers_company_jobs_path(current_user.company, @job) %>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', job: @job, url: employers_company_jobs_path(current_user.company, @job) %>

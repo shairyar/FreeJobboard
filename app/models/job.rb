@@ -17,4 +17,16 @@ class Job < ApplicationRecord
   has_many :skills, through: :job_skills
 
   accepts_nested_attributes_for :skills
+
+  FULL_TIME = 'full_time'
+  PART_TIME = 'part_time'
+  TEMPORARY = 'temporary'
+  FREELANCE = 'freelance'
+
+  DISPLAY_WORK_TYPES = {
+      FULL_TIME => 'Full Time',
+      PART_TIME => 'Part Time',
+      TEMPORARY => 'Temporary',
+      FREELANCE => 'Freelance'
+  }.freeze
 end

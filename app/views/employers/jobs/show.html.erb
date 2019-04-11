@@ -1,22 +1,25 @@
-<div class="page-header">
-  <%= link_to employers_company_jobs_path(current_user.company), class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    All Jobs
-  <% end %>
-  <%= link_to edit_employers_job_path(@job), class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Edit
-  <% end %>
-  <h1>Show job</h1>
+<div class="container">
+  <div class="page-header">
+    <%= link_to employers_company_jobs_path(current_user.company), class: 'btn btn-default' do %>
+      <span class="glyphicon glyphicon-list-alt"></span>
+      All Jobs
+    <% end %>
+    <%= link_to edit_employers_job_path(@job), class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      Edit
+    <% end %>
+    <h1>Show job</h1>
+  </div>
+
+  <dl class="dl-horizontal">
+    <dt>Title:</dt>
+    <dd><%= @job.title %></dd>
+
+    <dt>Description:</dt>
+    <dd><%= @job.description %></dd>
+
+    <dt>Company:</dt>
+    <dd><%= @job.company.name %></dd>
+  </dl>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Title:</dt>
-  <dd><%= @job.title %></dd>
-
-  <dt>Description:</dt>
-  <dd><%= @job.description %></dd>
-
-  <dt>Company:</dt>
-  <dd><%= @job.company.name %></dd>
-</dl>

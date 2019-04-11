@@ -1,31 +1,34 @@
-<div class="row">
-  <div class="col-sm-6">
-    <h1>Companies</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>Companies</h1>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Job Count</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <%
+        @companies.each do |company| %>
+
+        <%= content_tag :tr, id: dom_id(company), class: dom_class(company) do %>
+          <td><%= company.name %></td>
+          <td><%= link_to company.jobs.size, employers_company_jobs_path(company.id) %></td>
+          <td>
+            <%= link_to 'Show', employers_company_path(company.id) %>
+            <%= link_to 'Edit', edit_employers_company_path(company.id) %>
+          </td>
+        <% end %>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Job Count</th>
-      <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <%
-      @companies.each do |company| %>
-
-      <%= content_tag :tr, id: dom_id(company), class: dom_class(company) do %>
-        <td><%= company.name %></td>
-        <td><%= link_to company.jobs.size, employers_company_jobs_path(company.id) %></td>
-        <td>
-          <%= link_to 'Show', employers_company_path(company.id) %>
-          <%= link_to 'Edit', edit_employers_company_path(company.id) %>
-        </td>
-      <% end %>
-    <% end %>
-    </tbody>
-  </table>
-</div>
