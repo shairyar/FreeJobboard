@@ -2,28 +2,18 @@
 // $light-orange: #ff8c00;
 // $navbar-default-color: $light-orange;
 
+// Third party libraries
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap";
-@import "sticky-footer";
-@import "announcements";
 @import "selectize/dist/css/selectize";
 @import "selectize/dist/css/selectize.default";
-// Fixes bootstrap nav-brand container overlap
-@include media-breakpoint-down(xs) {
-  .container {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
 
-// Masquerade alert shouldn't have a bottom margin
-body > .alert {
-  margin-bottom: 0;
-}
-
-.alert ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+// Internal scss
+@import "colors";
+@import "main";
+@import "navbar";
+@import "home";
+@import "jobs";
+@import "announcements";
+@import "sticky-footer";

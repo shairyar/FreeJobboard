@@ -1,0 +1,47 @@
+.header{
+  background-image: image-url('header-image.jpg');
+  background-size: cover;
+  height: 500px;
+
+  .home-search-form {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 150px 0;
+  }
+  .home-search-form h3 {
+    color: $white;
+    font-size: 60px;
+  }
+
+  .home-search-form h3 strong {
+    float: left;
+    width: 100%;
+  }
+
+  .home-search-form form .search-field {
+    float: left;
+  }
+
+  .home-search-form form .search-field input {
+    width: 364px;
+    height: 60px;
+    font-size: 13px;
+  }
+
+  .home-search-form form button {
+    border: 0;
+    border-radius: 0.25rem;
+    width: 70px;
+    height: 60px;
+    background: $green;
+    color: $white;
+    font-size: 26px;
+    margin-left: 1px;
+  }
+
+  .home-search-form form {
+    display: inline-block;
+  }
+
+}
