@@ -78,7 +78,7 @@ module Employers
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :description, skill_ids: [])
+      params.require(:job).permit(:title, :description, :work_type, :salary_range,  skill_ids: [])
     end
   end
 end

@@ -13,7 +13,8 @@ class Company < ApplicationRecord
   has_many :users, through: :company_users
 
   has_many :jobs
-  accepts_nested_attributes_for :jobs
-
+  has_one :address, as: :addressable
   validates :name, presence: true
+
+  accepts_nested_attributes_for :jobs, :address, allow_destroy:true, update_only: true
 end

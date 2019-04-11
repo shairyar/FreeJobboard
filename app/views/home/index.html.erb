@@ -2,203 +2,25 @@
 
 <section>
   <div class="container box margin-top-50">
-    <div class="row list">
-      <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
-        <a href="#" class="logo">
-          <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-9  col-md-7 col-sm-9">
-        <h4><a href="job-details.html">Designer Required</a></h4>
-        <div>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Theoreo</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>New York City</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Full Time</a></span>
+    <% @jobs.each do |job| %>
+      <div class="row list">
+        <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
+          <a href="#" class="logo">
+            <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
+          </a>
+        </div>
+        <div class="col-lg-9  col-md-7 col-sm-9">
+          <h4><a href="job-details.html"><%= job.title %></a></h4>
+          <div>
+            <span><a href="#"><i class="fa fa-building"></i><%= job.company.name %></a></span>
+            <span><a href="#"><i class="fa fa-map-marker-alt"></i>New York City</a></span>
+            <span><a href="#"><i class="fa fa-clock"></i></svg><%= job.try(:work_type).try(:titleize)%></a></span>
+          </div>
+        </div>
+        <div class="col-lg-2  col-md-3 col-sm-3">
+          <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
         </div>
       </div>
-      <div class="col-lg-2  col-md-3 col-sm-3">
-        <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
-      </div>
-    </div>
-    <div class="row list">
-      <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
-        <a href="#" class="logo">
-          <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-9  col-md-7 col-sm-9">
-        <h4><a href="job-details.html">Designer Required</a></h4>
-        <div>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Theoreo</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>New York City</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Full Time</a></span>
-        </div>
-      </div>
-      <div class="col-lg-2  col-md-3 col-sm-3">
-        <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
-      </div>
-    </div>
-    <div class="row list">
-      <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
-        <a href="#" class="logo">
-          <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-9  col-md-7 col-sm-9">
-        <h4><a href="job-details.html">Designer Required</a></h4>
-        <div>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Theoreo</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>New York City</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Full Time</a></span>
-        </div>
-      </div>
-      <div class="col-lg-2  col-md-3 col-sm-3">
-        <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
-      </div>
-    </div>
-    <div class="row list">
-      <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
-        <a href="#" class="logo">
-          <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-9  col-md-7 col-sm-9">
-        <h4><a href="job-details.html">Designer Required</a></h4>
-        <div>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Theoreo</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>New York City</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Full Time</a></span>
-        </div>
-      </div>
-      <div class="col-lg-2  col-md-3 col-sm-3">
-        <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
-      </div>
-    </div>
-    <div class="row list">
-      <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
-        <a href="#" class="logo">
-          <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-9  col-md-7 col-sm-9">
-        <h4><a href="job-details.html">Designer Required</a></h4>
-        <div>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Theoreo</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>New York City</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Full Time</a></span>
-        </div>
-      </div>
-      <div class="col-lg-2  col-md-3 col-sm-3">
-        <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
-      </div>
-    </div>
-    <div class="row list">
-      <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
-        <a href="#" class="logo">
-          <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-9  col-md-7 col-sm-9">
-        <h4><a href="job-details.html">Designer Required</a></h4>
-        <div>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Theoreo</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>New York City</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Full Time</a></span>
-        </div>
-      </div>
-      <div class="col-lg-2  col-md-3 col-sm-3">
-        <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
-      </div>
-    </div>
-    <div class="row list">
-      <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
-        <a href="#" class="logo">
-          <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-9  col-md-7 col-sm-9">
-        <h4><a href="job-details.html">Designer Required</a></h4>
-        <div>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Theoreo</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>New York City</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Full Time</a></span>
-        </div>
-      </div>
-      <div class="col-lg-2  col-md-3 col-sm-3">
-        <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
-      </div>
-    </div>
-    <div class="row list">
-      <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
-        <a href="#" class="logo">
-          <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-9  col-md-7 col-sm-9">
-        <h4><a href="job-details.html">Designer Required</a></h4>
-        <div>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Theoreo</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>New York City</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Full Time</a></span>
-        </div>
-      </div>
-      <div class="col-lg-2  col-md-3 col-sm-3">
-        <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
-      </div>
-    </div>
-    <div class="row list">
-      <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
-        <a href="#" class="logo">
-          <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-9  col-md-7 col-sm-9">
-        <h4><a href="job-details.html">Designer Required</a></h4>
-        <div>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Theoreo</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>New York City</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Full Time</a></span>
-        </div>
-      </div>
-      <div class="col-lg-2  col-md-3 col-sm-3">
-        <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
-      </div>
-    </div>
-    <div class="row list">
-      <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
-        <a href="#" class="logo">
-          <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-9  col-md-7 col-sm-9">
-        <h4><a href="job-details.html">Designer Required</a></h4>
-        <div>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Theoreo</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>New York City</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Full Time</a></span>
-        </div>
-      </div>
-      <div class="col-lg-2  col-md-3 col-sm-3">
-        <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
-      </div>
-    </div>
-    <div class="row list">
-      <div class="col-lg-1 col-md-2 col-sm-1 d-sm-none d-md-block">
-        <a href="#" class="logo">
-          <img src="https://via.placeholder.com/84x84" class="img-fluid" alt="">
-        </a>
-      </div>
-      <div class="col-lg-9  col-md-7 col-sm-9">
-        <h4><a href="job-details.html">Designer Required</a></h4>
-        <div>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Theoreo</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>New York City</a></span>
-          <span><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Full Time</a></span>
-        </div>
-      </div>
-      <div class="col-lg-2  col-md-3 col-sm-3">
-        <a href="#" class="btn btn-secondary apply_button">Apply Now</a>
-      </div>
-    </div>
+    <% end %>
   </div>
 </section>

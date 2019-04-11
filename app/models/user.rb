@@ -28,7 +28,10 @@ class User < ApplicationRecord
   
   has_many :company_users
   has_many :companies, through: :company_users
-  
+
+  has_one :address, as: :addressable
+
+
   accepts_nested_attributes_for :companies
 
   def is_job_seeker?
