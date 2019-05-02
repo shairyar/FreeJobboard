@@ -21,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', github: 'rails/jbuilder', branch: 'master'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -42,7 +42,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-stack_explorer'
   gem 'pry-nav'
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails', branch: '4-0-dev'
   gem 'capybara'
   gem "webdrivers", "~> 3.0"
   gem "database_cleaner"

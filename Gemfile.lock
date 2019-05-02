@@ -28,6 +28,29 @@ GIT
   specs:
     gravatar_image_tag (1.2.0)
 
+GIT
+  remote: https://github.com/rails/jbuilder.git
+  revision: 7ff5e25bce45d13282133ed1aab122cc050d396e
+  branch: master
+  specs:
+    jbuilder (2.8.0)
+      activesupport (>= 4.2.0)
+      multi_json (>= 1.2)
+
+GIT
+  remote: https://github.com/rspec/rspec-rails
+  revision: b4a2682485c4d171216fa2a146152189562d92a9
+  branch: 4-0-dev
+  specs:
+    rspec-rails (4.0.0.beta2)
+      actionpack (>= 4.2)
+      activesupport (>= 4.2)
+      railties (>= 4.2)
+      rspec-core (~> 3.8)
+      rspec-expectations (~> 3.8)
+      rspec-mocks (~> 3.8)
+      rspec-support (~> 3.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -202,9 +225,6 @@ GEM
     highline (1.7.10)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.8.0)
-      activesupport (>= 4.2.0)
-      multi_json (>= 1.2)
     jmespath (1.4.0)
     jquery-rails (4.3.3)
       rails-dom-testing (>= 1, < 3)
@@ -356,14 +376,6 @@ GEM
     rspec-mocks (3.8.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
-    rspec-rails (3.8.2)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 3.8.0)
-      rspec-expectations (~> 3.8.0)
-      rspec-mocks (~> 3.8.0)
-      rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
@@ -486,7 +498,7 @@ DEPENDENCIES
   friendly_id (~> 5.2, >= 5.2.5)
   gravatar_image_tag!
   guard-rspec
-  jbuilder (~> 2.5)
+  jbuilder!
   listen (>= 3.0.5, < 3.2)
   mini_magick (~> 4.9, >= 4.9.2)
   name_of_person (~> 1.1)
@@ -500,7 +512,7 @@ DEPENDENCIES
   puma (~> 3.11)
   pundit
   rails (~> 6.0.0.beta3)
-  rspec-rails (~> 3.8)
+  rspec-rails!
   sass-rails (~> 5.0)
   sidekiq (~> 5.2, >= 5.2.5)
   simplecov
