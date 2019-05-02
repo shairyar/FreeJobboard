@@ -90,4 +90,9 @@ gem 'sidekiq', '~> 5.2', '>= 5.2.5'
 gem 'sitemap_generator', '~> 6.0', '>= 6.0.1'
 gem 'whenever', require: false
 gem 'webpacker', '~> 4.0.1'
+
+# for authorization
 gem 'pundit'
+
+# for uploading attachments to amazon s3
+gem "aws-sdk-s3", require: false

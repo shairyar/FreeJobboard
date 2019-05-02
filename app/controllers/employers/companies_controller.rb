@@ -72,7 +72,7 @@ module Employers
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:name, address_attributes: [:line_1, :line_2, :city, :state, :zip_code, :country])
+      params.require(:company).permit(:name, :logo, address_attributes: [:line_1, :line_2, :city, :state, :zip_code, :country])
     end
   end
 end

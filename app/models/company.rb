@@ -17,4 +17,6 @@ class Company < ApplicationRecord
   validates :name, presence: true
 
   accepts_nested_attributes_for :jobs, :address, allow_destroy:true, update_only: true
+
+  has_one_attached :logo
 end

@@ -15,6 +15,12 @@
     <%= form.text_field :name, class: 'form-control' %>
   </div>
 
+  <div class="form-group">
+    <%= form.label :logo %>
+    <%= form.file_field :logo %>
+  </div>
+
+
   <%= form.fields_for :address do |form| %>
     <div class="form-group">
       <%= form.label 'Address Line 1' %>
